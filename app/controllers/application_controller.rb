@@ -1,15 +1,6 @@
 class ApplicationController < ActionController::Base
 before_action :basic_auth
 
-def index
-  @posts = Post.all.order(id: "DESC")
-end
-
-def create
-  Post.create(content: params[:content])
-  redirect_to action: :index
-end
-
 private
 
   def basic_auth
