@@ -1,3 +1,4 @@
+
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -69,7 +70,7 @@ Things you may want to cover:
 ## records テーブル
 
 | Column  | Type       | Options |
-| ------- | ---------- | ------------------------------ |
+| ------- | ---------- | ---------------------------- |
 | buyer | string |null: false|
 | address | string | null :fase
 | user_id | references | null: false, foreign_key: true |
@@ -80,9 +81,5 @@ Things you may want to cover:
 - belongs_to :item
 - belongs_to :user
 - has_one :address
-
-
-
-
 
 
