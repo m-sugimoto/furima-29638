@@ -29,7 +29,11 @@ Things you may want to cover:
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
+| nickname | string | null: false |
+| firstname     | string | null: false |
 | name     | string | null: false |
+| firstname_reading     | string | null: false |
+| name_readeing     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
 
@@ -48,6 +52,10 @@ Things you may want to cover:
 | price | string | null: false |
 | seller | string | null: false |
 | users_id | string | null: false |
+| status | string | null: false |
+| fromsend | string | null: false |
+| postage | string | null: false |
+| sendingday | string | nill: false |
 
 ### Association
 
@@ -71,10 +79,12 @@ Things you may want to cover:
 
 | Column  | Type       | Options |
 | ------- | ---------- | ---------------------------- |
-| buyer | string |null: false|
-| address | string | null :fase
-| user_id | references | null: false, foreign_key: true |
-| item_id | references | null: false, foreign_key: true |
+| postal_code | string |null: false|
+| pergecter | integer | null :false|
+| city | string | null:false |
+| house_number | string | null:false |
+| bulding_name | string | null:true |
+| telnumber | string | null:false |
 
 ### Association
 
