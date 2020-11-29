@@ -29,6 +29,7 @@ Things you may want to cover:
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
+| birthday | date | null: false |
 | nickname | string | null: false |
 | firstname     | string | null: false |
 | name     | string | null: false |
@@ -36,34 +37,34 @@ Things you may want to cover:
 | name_readeing     | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
+| encrypted_password | string | null: false |
 
 ### Association
 
-- has_many :item_users
-- has_many :items, through: item_users
-- has_one :records
+- has_one :item_users
+- has_one :items, through: item_users
+- has_one :address
 
 ## items テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | comodity | string | null: false |
-| kategory | string | null: false |
+| kategory_id | integer | null: false |
 | price | string | null: false |
-| seller | string | null: false |
-| users_id | string | null: false |
-| status | string | null: false |
-| fromsend | string | null: false |
-| postage | string | null: false |
-| sendingday | string | nill: false |
+| user   | references | null: false, foreign_key: true |
+| status_id | integer | null: false |
+| fromsend_id | integer | null: false |
+| postage_id | integer | null: false |
+| sendingday_id | integer | nill: false |
 
 ### Association
 
-- has_many :item_users
-- has_many :users, through: item_users
-- has_one :records
+- has_one :item_users
+- has_one :users, through: item_users
+- has_one :address
 
-## item_users テーブル
+## records テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -75,12 +76,12 @@ Things you may want to cover:
 - belongs_to :item
 - belongs_to :user
 
-## records テーブル
+## addresses テーブル
 
 | Column  | Type       | Options |
 | ------- | ---------- | ---------------------------- |
 | postal_code | string |null: false|
-| pergecter | integer | null :false|
+| prefecture_id | integer | null :false|
 | city | string | null:false |
 | house_number | string | null:false |
 | bulding_name | string | null:true |
@@ -90,6 +91,4 @@ Things you may want to cover:
 
 - belongs_to :item
 - belongs_to :user
-- has_one :address
-
-
+- has_one :record
