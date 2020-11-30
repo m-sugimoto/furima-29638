@@ -36,14 +36,12 @@ Things you may want to cover:
 | firstname_reading     | string | null: false |
 | name_readeing     | string | null: false |
 | email    | string | null: false |
-| password | string | null: false |
 | encrypted_password | string | null: false |
 
 ### Association
 
-- has_one :item_users
-- has_one :items, through: item_users
-- has_one :address
+- has_many :records
+- has_many :items, through: records
 
 ## items テーブル
 
@@ -60,9 +58,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :item_users
-- has_one :users, through: item_users
-- has_one :address
+- belongs_to :user
+- has_one :record
 
 ## records テーブル
 
@@ -75,6 +72,7 @@ Things you may want to cover:
 
 - belongs_to :item
 - belongs_to :user
+- has_one :address
 
 ## addresses テーブル
 
@@ -86,9 +84,10 @@ Things you may want to cover:
 | house_number | string | null:false |
 | bulding_name | string | null:true |
 | telnumber | string | null:false |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item
-- belongs_to :user
-- has_one :record
+
+- belongs_to :record
