@@ -41,7 +41,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :records
-- has_many :items, through: records
+- has_many :items
 
 ## items テーブル
 
@@ -49,7 +49,7 @@ Things you may want to cover:
 | ------ | ------ | ----------- |
 | comodity | string | null: false |
 | kategory_id | integer | null: false |
-| price | string | null: false |
+| price | integer | null: false |
 | user   | references | null: false, foreign_key: true |
 | status_id | integer | null: false |
 | fromsend_id | integer | null: false |
@@ -84,8 +84,7 @@ Things you may want to cover:
 | house_number | string | null:false |
 | bulding_name | string | null:true |
 | telnumber | string | null:false |
-| user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
+｜record_id | references | null:false, foreign_key: ture |
 
 ### Association
 
