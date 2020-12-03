@@ -35,7 +35,7 @@ Things you may want to cover:
 | name     | string | null: false |
 | firstname_reading     | string | null: false |
 | name_readeing     | string | null: false |
-| email    | string | null: false |
+| email    | string | null: false, unique: true|
 | encrypted_password | string | null: false |
 
 ### Association
@@ -48,11 +48,11 @@ Things you may want to cover:
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | comodity | text | null: false |
-| kategory_id | integer | null: false |
+| category_id | integer | null: false |
 | price | integer | null: false |
 | user   | references | null: false, foreign_key: true |
 | status_id | integer | null: false |
-| fromsend_id | integer | null: false |
+| prefecture_id | integer | null: false |
 | postage_id | integer | null: false |
 | sendingday_id | integer | nill: false |
 
@@ -84,7 +84,7 @@ Things you may want to cover:
 | house_number | string | null:false |
 | bulding_name | string | null:true |
 | telnumber | string | null:false |
-｜record_id | references | null:false, foreign_key: ture |
+｜record | references | null:false, foreign_key: ture |
 
 ### Association
 
