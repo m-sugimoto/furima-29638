@@ -47,7 +47,7 @@ Things you may want to cover:
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| comodity | string | null: false |
+| comodity | text | null: false |
 | kategory_id | integer | null: false |
 | price | integer | null: false |
 | user   | references | null: false, foreign_key: true |
