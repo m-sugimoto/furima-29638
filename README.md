@@ -85,7 +85,7 @@ Things you may want to cover:
 | house_number | string | null :false |
 | bulding_name | string |  |
 | telnumber | string | null:false |
-｜record | references | null:false, foreign_key :ture |
+｜record | references | null:false, foreign_key :true |
 
 ### Association
 
