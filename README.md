@@ -91,4 +91,3 @@ Things you may want to cover:
 
 
 - belongs_to :record
-
