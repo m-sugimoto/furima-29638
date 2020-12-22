@@ -38,6 +38,11 @@ describe User do
         another_user.valid?
         expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
+      it "emailは＠がないと登録できない" do
+        @user.email = "aaagmail.com"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
       it "passwordが空では登録できない" do
         @user.password = ""
         @user.valid?
@@ -104,7 +109,7 @@ describe User do
         @user.birthday = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
-      end 
+      end
     end
   end
 end
