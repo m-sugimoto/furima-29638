@@ -59,3 +59,4 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'pry-rails'
 gem 'active_hash'
+gem "aws-sdk-s3", require: false
