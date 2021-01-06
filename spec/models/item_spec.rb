@@ -7,7 +7,7 @@ RSpec.describe Item, type: :model do
   describe '商品出品' do
     context '商品出品がうまく行く時' do
       it "commodityとexplan,status_id,category_id,postage_id,prefecture_id,sendingday_id,とpriceが存在すれば登録できる" do
-        binding.pry
+        user = FactoryBot.create(:user)
         expect(@item).to be_valid
       end
       it "priceは¥300~¥9,999,999の間であること" do
@@ -40,27 +40,27 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Explan can't be blank")
       end
       it "statusが1以外でないと登録できない" do
-        @item.status_id = "1"
+        @item.status_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Status select")
       end
       it "categoryが1以外でないと登録できない" do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Category select")
       end
       it "postageが1以外でないと登録できない" do
-        @item.postage_id = '1'
+        @item.postage_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Postage select")
       end
       it "prefectureが0以外でないと登録できない" do
-        @item.prefecture_id = '0'
+        @item.prefecture_id = 0
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture select")
       end
       it "sendingdayが1以外でないと登録できない" do
-        @item.sendingday_id = '1'
+        @item.sendingday_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Sendingday select")
       end
@@ -70,12 +70,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "priceが10,000,000以上では登録できない" do
-        @item.price = '10000000'
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
       it "priceが299以下では登録できない" do
-        @item.price = '299'
+        @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
