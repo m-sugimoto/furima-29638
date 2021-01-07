@@ -83,6 +83,31 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price Half-width number")
       end
+      it "statusが空では登録できない" do
+        @item.status_id = ""
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status can't be blank")
+      end
+      it "categoryが空だと登録できない" do
+        @item.category_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Category can't be blank")
+      end
+      it "postageが空だと登録できない" do
+        @item.postage_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Postage can't be blank")
+      end
+      it "prefectureが空だと登録できない" do
+        @item.prefecture_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      end
+      it "sendingdayが空だと登録できない" do
+        @item.sendingday_id = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Sendingday can't be blank")
+      end
     end
   end
 end
