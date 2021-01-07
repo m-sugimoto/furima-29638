@@ -7,6 +7,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :sendingday
+  belongs_to :prefecture
 
   with_options presence: true do
     validates :image
