@@ -47,7 +47,7 @@ Things you may want to cover:
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| commodity | string | null: false |
+| comodity | string | null: false |
 | explan | text | null: false|
 | category_id | integer | null: false |
 | price | integer | null: false |
