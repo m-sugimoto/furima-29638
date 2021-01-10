@@ -18,6 +18,10 @@ before_action :authenticate_user!, only:[:new, :create]
     end
   end
 
+  def index
+    @item = item.all
+  end
+
   #def show
     #@item = Item.find(params[:id])
   #end
