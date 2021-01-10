@@ -33,15 +33,6 @@ ActiveRecord::Schema.define(version: 2020_12_27_123028) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "donations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "price", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["price"], name: "index_donations_on_price"
-    t.index ["user_id"], name: "index_donations_on_user_id"
-  end
-
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "commodity"
     t.integer "category_id"
@@ -92,6 +83,5 @@ ActiveRecord::Schema.define(version: 2020_12_27_123028) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "donations", "users"
   add_foreign_key "records", "users"
 end
