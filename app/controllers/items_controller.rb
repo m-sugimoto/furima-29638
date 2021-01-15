@@ -24,13 +24,13 @@ before_action :set_item, only: [:show, :edit, :update]
   end
 
   def edit
-    if user_signed_in? && current_user.id != @item.user_id 
+    if current_user.id != @item.user_id 
       redirect_to root_path
     end
   end
 
   def update
-    if user_signed_in? && current_user.id != @item.user_id 
+    if current_user.id != @item.user_id 
       redirect_to root_path
     end
     if @item.update(item_params)
