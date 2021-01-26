@@ -5,7 +5,6 @@ before_action :login_check, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.all.order("created_at DESC")
-    @items = Item.includes(:user)
   end  
 
   def new
