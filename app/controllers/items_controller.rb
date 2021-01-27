@@ -24,6 +24,9 @@ before_action :login_check, only: [:edit, :update, :destroy]
   end
 
   def edit
+    if @item.order != nil
+      redirect_to root_path 
+    end
   end
 
   def update
