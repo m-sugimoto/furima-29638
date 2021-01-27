@@ -13,6 +13,10 @@ RSpec.describe OrderForm, type: :model do
       it "postal_codeとprefecture_id,city,house_name,とtelnumberが存在すれば登録できる" do
         expect(@order_form).to be_valid
       end
+      it "building_nameが空でも登録できる" do
+        @order_form.building_name = nil
+        expect(@order_form).to be_valid
+      end
     end
 
 
@@ -87,10 +91,7 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Item can't be blank")
       end
-      it "building_nameが空でも登録できる" do
-        @order_form.building_name = nil
-        @order_form.valid?
-      end
+      
     end
   end
 end
