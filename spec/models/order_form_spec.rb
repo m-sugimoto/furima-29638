@@ -76,6 +76,11 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Telnumber is too long (maximum is 11 characters)")
       end
+      it "telnumberが英数混合だと登録できない" do
+        @order_form.telnumber = 'aaa0000aaaa'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Telnumber Half-width number")
+      end
       it "tokenが空だと登録できない" do
         @order_form.token = ''
         @order_form.valid?
