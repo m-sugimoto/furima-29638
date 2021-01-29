@@ -62,7 +62,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :record
 
-## records テーブル
+## orders テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -85,7 +85,7 @@ Things you may want to cover:
 | house_number | string | null :false |
 | bulding_name | string |  |
 | telnumber | string | null:false |
-｜record | references | null:false, foreign_key :true |
+｜order | references | null:false, foreign_key :true |
 
 ### Association
 
